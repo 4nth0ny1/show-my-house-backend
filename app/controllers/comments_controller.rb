@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController
 
     def index 
-        comments = Comment.all
+        home = Home.find(params[:home_id])
+        comments = home.comments
         render json: comments
     end 
 
